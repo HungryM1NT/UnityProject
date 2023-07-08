@@ -21,13 +21,11 @@ public class PlayerHealth : MonoBehaviour
     public Sprite hp42;
     public Sprite hp43;
     public Sprite hp44;
+    public GameObject effect;
+    private float invincibilityTime;
+    public float startInvincibilityTime;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         switch (maxhealth)
         {
@@ -82,6 +80,18 @@ public class PlayerHealth : MonoBehaviour
                         break;
                 }
                 break;
-        } 
+        }
+        if (invincibilityTime > 0f)
+            invincibilityTime -= Time.deltaTime;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (invincibilityTime <= 0f)
+        {
+            health -= damage;
+            Instantiate(effect, transform.position, Quaternion.identity);
+            invincibilityTime = startInvincibilityTime;
+        }
     }
 }

@@ -7,24 +7,22 @@ using UnityEngine.Rendering;
 public class Goblin : MonoBehaviour
 {
     public float speed;
+    public int damage;
     private Transform player;
     public float agroDistance;
     public Animator animator;
-    private Rigidbody2D rb;
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        rb.Sleep();
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        if ((distToPlayer < agroDistance) && (distToPlayer > 1))
+        if ((distToPlayer < agroDistance) && (distToPlayer > 0.9))
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             if (player.position.x < transform.position.x)
@@ -41,7 +39,7 @@ public class Goblin : MonoBehaviour
         {
             animator.SetBool("Run", false);
         }
-        if(distToPlayer < 1 && timeBtwAttack <= 0f)
+        if(distToPlayer < 0.9 && timeBtwAttack <= 0f)
         {
             animator.SetTrigger("Attack");
             switch (AttackDir())
@@ -59,9 +57,12 @@ public class Goblin : MonoBehaviour
                     timeBtwAttack = startTimeBtwAttack;
                     break;
             }
+            GameObject.Find("Player").GetComponent<PlayerHealth>().TakeDamage(damage);
         }
         else
             timeBtwAttack -= Time.deltaTime;
+
+
     }
 
     string AttackDir()
@@ -84,4 +85,5 @@ public class Goblin : MonoBehaviour
         }
         return dir;
     }
+
 }
