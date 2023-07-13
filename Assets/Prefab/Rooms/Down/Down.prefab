@@ -241,7 +241,9 @@ MonoBehaviour:
   keyDoor: {fileID: 2101140572207661426}
   enemyTypes:
   - {fileID: 6557060158905909418, guid: 4f0c1c78d1007584fb413cdfdb7e06cc, type: 3}
-  enemySpawners: []
+  enemySpawners:
+  - {fileID: 6719894198326094660}
+  - {fileID: 3665490419123710178}
   enemies: []
 --- !u!1 &1243508143404502277
 GameObject:
@@ -1455,7 +1457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7251330125845270171}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: -3.961, z: 0}
+  m_LocalPosition: {x: 0.5, y: -3.8, z: 0}
   m_LocalScale: {x: 0.35, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

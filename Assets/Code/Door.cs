@@ -13,5 +13,6 @@ public class Door : MonoBehaviour
             Instantiate(wall, transform.GetChild(0).position, Quaternion.identity);
             Destroy(gameObject);
         }
-    }    
+    }
+
 }

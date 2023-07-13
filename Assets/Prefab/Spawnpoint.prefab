@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &-8984517617094893835
 BoxCollider2D:
@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9412d01332079b49b97148f69046a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
+  roomSpawner: {fileID: 7929940140619870720}

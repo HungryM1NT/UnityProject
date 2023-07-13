@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class RoomSpawner : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class RoomSpawner : MonoBehaviour
     private RoomVariants variants;
     private int rand;
     private bool spawned = false;
-    private float waitTime = 3f;
+    private float waitTime = 120f;
 
     private void Start()
     {
@@ -34,23 +35,19 @@ public class RoomSpawner : MonoBehaviour
         {
             if (direction == Direction.Top)
             {
-                rand = Random.Range(0, variants.topRooms.Length);
-                Instantiate(variants.topRooms[rand], transform.position, variants.topRooms[rand].transform.rotation);
+                Invoke("SpawnTop", 0.2f);
             }
             else if (direction == Direction.Bottom)
             {
-                rand = Random.Range(0, variants.bottomRooms.Length);
-                Instantiate(variants.bottomRooms[rand], transform.position, variants.bottomRooms[rand].transform.rotation);
+                Invoke("SpawnBottom", 0.6f);
             }
             else if (direction == Direction.Left)
             {
-                rand = Random.Range(0, variants.leftRooms.Length);
-                Instantiate(variants.leftRooms[rand], transform.position, variants.leftRooms[rand].transform.rotation);
+                Invoke("SpawnLeft", 1f);
             }
             else if (direction == Direction.Right)
             {
-                rand = Random.Range(0, variants.rightRooms.Length);
-                Instantiate(variants.rightRooms[rand], transform.position, variants.rightRooms[rand].transform.rotation);
+                Invoke("SpawnRight", 1.4f);
             }
             else if (direction == Direction.All)
             {
@@ -64,8 +61,33 @@ public class RoomSpawner : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("RoomPoint") && other.GetComponent<RoomSpawner>().spawned)
-        {
+        { 
             Destroy(gameObject);
         }
+        
+    }
+
+    private void SpawnTop()
+    {
+        rand = Random.Range(0, variants.topRooms.Length);
+        Instantiate(variants.topRooms[rand], transform.position, variants.topRooms[rand].transform.rotation);
+    }
+
+    private void SpawnBottom()
+    {
+        rand = Random.Range(0, variants.bottomRooms.Length);
+        Instantiate(variants.bottomRooms[rand], transform.position, variants.bottomRooms[rand].transform.rotation);
+    }
+
+    private void SpawnRight()
+    {
+        rand = Random.Range(0, variants.rightRooms.Length);
+        Instantiate(variants.rightRooms[rand], transform.position, variants.rightRooms[rand].transform.rotation);
+    }
+
+    private void SpawnLeft()
+    {
+        rand = Random.Range(0, variants.leftRooms.Length);
+        Instantiate(variants.leftRooms[rand], transform.position, variants.leftRooms[rand].transform.rotation);
     }
 }

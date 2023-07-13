@@ -21,11 +21,13 @@ public class RoomVariants : MonoBehaviour
 
     IEnumerator RandomSpawner()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(30f);
         AddRoom lastRoom = rooms[rooms.Count - 1].GetComponent<AddRoom>();
         int rand = Random.Range(0, rooms.Count - 1);
-
-        Instantiate(key, rooms[rand].transform.position, Quaternion.identity);
+        Vector3 pos = rooms[rand].transform.position;
+        pos[0] += 0.5f;
+        pos[1] += 0.5f;
+        Instantiate(key, pos, Quaternion.identity);
 
         lastRoom.keyDoor.SetActive(true);
         lastRoom.OpenDoors();
