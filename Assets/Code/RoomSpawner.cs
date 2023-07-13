@@ -12,6 +12,7 @@ public class RoomSpawner : MonoBehaviour
         Bottom,
         Left,
         Right,
+        All,
         None
     }
 
@@ -31,7 +32,7 @@ public class RoomSpawner : MonoBehaviour
     {
         if(!spawned)
         {
-            if(direction == Direction.Top)
+            if (direction == Direction.Top)
             {
                 rand = Random.Range(0, variants.topRooms.Length);
                 Instantiate(variants.topRooms[rand], transform.position, variants.topRooms[rand].transform.rotation);
@@ -50,6 +51,11 @@ public class RoomSpawner : MonoBehaviour
             {
                 rand = Random.Range(0, variants.rightRooms.Length);
                 Instantiate(variants.rightRooms[rand], transform.position, variants.rightRooms[rand].transform.rotation);
+            }
+            else if (direction == Direction.All)
+            {
+                rand = Random.Range(0, variants.startRooms.Length);
+                Instantiate(variants.startRooms[rand], transform.position, variants.startRooms[rand].transform.rotation);
             }
             spawned = true;
         }

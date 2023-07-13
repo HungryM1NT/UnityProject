@@ -216,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 6
   damage: 1
+  effect: {fileID: 8485619460436703472, guid: f36d41b6c5da87547b7e56b790fbbb72, type: 3}
 --- !u!50 &8864851681349153878
 Rigidbody2D:
   serializedVersion: 4

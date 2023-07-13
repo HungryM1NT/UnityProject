@@ -10,10 +10,12 @@ public class Enemy : MonoBehaviour
     public int damage;
     private Rigidbody2D rb;
     public GameObject effect;
+    private AddRoom room;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        room = GetComponentInParent<AddRoom>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            room.enemies.Remove(gameObject);
         }
         rb.Sleep();
     }

@@ -8,4 +8,26 @@ public class RoomVariants : MonoBehaviour
     public GameObject[] bottomRooms;
     public GameObject[] rightRooms;
     public GameObject[] leftRooms;
+    public GameObject[] startRooms;
+
+    public GameObject key;
+
+    [HideInInspector] public List<GameObject> rooms;
+
+    private void Start()
+    {
+        StartCoroutine(RandomSpawner());
+    }
+
+    IEnumerator RandomSpawner()
+    {
+        yield return new WaitForSeconds(5f);
+        AddRoom lastRoom = rooms[rooms.Count - 1].GetComponent<AddRoom>();
+        int rand = Random.Range(0, rooms.Count - 1);
+
+        Instantiate(key, rooms[rand].transform.position, Quaternion.identity);
+
+        lastRoom.keyDoor.SetActive(true);
+        lastRoom.OpenDoors();
+    }
 }

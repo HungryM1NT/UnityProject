@@ -508,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 212637433242012377}
   - component: {fileID: 5078015190248467440}
+  - component: {fileID: 3111472247683980358}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -576,6 +577,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.089634}
   m_EdgeRadius: 0
+--- !u!114 &3111472247683980358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3328081552147549348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8733ecc83fc264f96d8c75d5a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 4100863362536060327, guid: 0f8f35faca5e4b04cbece0b417ca7db9, type: 3}
 --- !u!1 &3555223052031835581
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +606,7 @@ GameObject:
   - component: {fileID: 2129223101591231031}
   m_Layer: 0
   m_Name: TilesWalls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1359,6 +1373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6440725747384833912}
   - component: {fileID: 6642542135580219981}
+  - component: {fileID: 6104232679053288683}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -1427,6 +1442,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.089634}
   m_EdgeRadius: 0
+--- !u!114 &6104232679053288683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583822005455052462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8733ecc83fc264f96d8c75d5a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 4100863362536060327, guid: 0f8f35faca5e4b04cbece0b417ca7db9, type: 3}
 --- !u!1 &4162108542062066828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2740891515091386088}
   - component: {fileID: 8934809236492514939}
+  - component: {fileID: -2431778729016201819}
   m_Layer: 0
   m_Name: No-Right
   m_TagString: Untagged
@@ -1924,6 +1953,51 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!61 &-2431778729016201819
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988274674401599784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17, y: 9}
+  m_EdgeRadius: 0
 --- !u!1 &6204528978113012322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189013301745990546}
   - component: {fileID: 7142892543391217076}
+  - component: {fileID: 8186055137060370886}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -3486,6 +3561,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.089634}
   m_EdgeRadius: 0
+--- !u!114 &8186055137060370886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561261311485598510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8733ecc83fc264f96d8c75d5a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 4100863362536060327, guid: 0f8f35faca5e4b04cbece0b417ca7db9, type: 3}
 --- !u!1 &8561622011069954227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,4 +4264,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChangePos: {x: -17, y: 0, z: 0}
-  plaerChangePos: {x: -2, y: 0, z: 0}
+  plaerChangePos: {x: -2.5, y: 0, z: 0}

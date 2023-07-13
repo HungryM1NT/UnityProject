@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7945132473114335490}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37c2b3e567216674eb34edb0a30f3c71, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: a5aeace50583a4a459d4b3e31b8aff28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3561232828292320446}
   - component: {fileID: 6616786914230739434}
+  - component: {fileID: -892739927346693291}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -161,7 +162,7 @@ Transform:
   m_Children:
   - {fileID: 1045573276337802775}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6616786914230739434
 BoxCollider2D:
@@ -208,3 +209,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.089634}
   m_EdgeRadius: 0
+--- !u!114 &-892739927346693291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825826468911330830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8733ecc83fc264f96d8c75d5a7ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 4100863362536060327, guid: 0f8f35faca5e4b04cbece0b417ca7db9, type: 3}
