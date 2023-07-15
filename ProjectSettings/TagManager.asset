@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - KeyDoor
   - Key
+  - Stairs
   layers:
   - Default
   - TransparentFX

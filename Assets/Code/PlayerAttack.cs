@@ -17,34 +17,39 @@ public class PlayerAttack : MonoBehaviour
     public int damage;
     public Animator anim;
 
+    public GameObject pause;
+
     void Update()
     {
-        if(timeBtwAttack <= 0f)
+        if (!pause.activeInHierarchy)
         {
-            if (Input.GetKeyDown(attackLeft))
+            if (timeBtwAttack <= 0f)
             {
-                anim.SetTrigger("Attack");
-                anim.SetFloat("Attack_dir", 1);
+                if (Input.GetKeyDown(attackLeft))
+                {
+                    anim.SetTrigger("Attack");
+                    anim.SetFloat("Attack_dir", 1);
+                }
+                else if (Input.GetKeyDown(attackUp))
+                {
+                    anim.SetTrigger("Attack");
+                    anim.SetFloat("Attack_dir", 2);
+                }
+                else if (Input.GetKeyDown(attackRight))
+                {
+                    anim.SetTrigger("Attack");
+                    anim.SetFloat("Attack_dir", 3);
+                }
+                else if (Input.GetKeyDown(attackDown))
+                {
+                    anim.SetTrigger("Attack");
+                    anim.SetFloat("Attack_dir", 4);
+                }
             }
-            else if (Input.GetKeyDown(attackUp))
+            else
             {
-                anim.SetTrigger("Attack");
-                anim.SetFloat("Attack_dir", 2);
+                timeBtwAttack -= Time.deltaTime;
             }
-            else if (Input.GetKeyDown(attackRight))
-            {
-                anim.SetTrigger("Attack");
-                anim.SetFloat("Attack_dir", 3);
-            }
-            else if (Input.GetKeyDown(attackDown))
-            {
-                anim.SetTrigger("Attack");
-                anim.SetFloat("Attack_dir", 4);
-            }
-        }
-        else
-        {
-            timeBtwAttack -= Time.deltaTime;
         }
     }
 

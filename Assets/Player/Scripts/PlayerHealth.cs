@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject effect;
     private float invincibilityTime;
     public float startInvincibilityTime;
+
 
     void FixedUpdate()
     {
@@ -83,6 +85,10 @@ public class PlayerHealth : MonoBehaviour
         }
         if (invincibilityTime > 0f)
             invincibilityTime -= Time.deltaTime;
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void TakeDamage(int damage)

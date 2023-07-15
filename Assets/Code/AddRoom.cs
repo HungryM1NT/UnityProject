@@ -7,7 +7,7 @@ public class AddRoom : MonoBehaviour
 {
     public GameObject[] doors;
     public GameObject walleffect;
-    public GameObject keyDoor;
+    public GameObject[] keyDoor;
 
     public GameObject[] enemyTypes;
     public Transform[] enemySpawners;
@@ -17,6 +17,10 @@ public class AddRoom : MonoBehaviour
     private RoomVariants variants;
     private bool spawned;
     private bool doorsOpened;
+
+    public GameObject[] roomUnits;
+    public GameObject stairs;
+    public GameObject bossSpawner;
 
     private void Awake()
     {
@@ -33,15 +37,17 @@ public class AddRoom : MonoBehaviour
         if (other.CompareTag("Player") && !spawned)
         {
             spawned = true;
-
-            foreach (Transform spawner in enemySpawners)
+            if (!bossSpawner.activeInHierarchy)
             {
-                GameObject enemyType = enemyTypes[Random.Range(0, enemyTypes.Length)];
-                GameObject enemy = Instantiate(enemyType, spawner.position, Quaternion.identity) as GameObject;
-                enemy.transform.parent = transform;
-                enemies.Add(enemy);
+                foreach (Transform spawner in enemySpawners)
+                {
+                    GameObject enemyType = enemyTypes[Random.Range(0, enemyTypes.Length)];
+                    GameObject enemy = Instantiate(enemyType, spawner.position, Quaternion.identity) as GameObject;
+                    enemy.transform.parent = transform;
+                    enemies.Add(enemy);
+                }
+            StartCoroutine(CheckEnemies());
             }
-           StartCoroutine(CheckEnemies());
         }
     }
 
@@ -49,7 +55,10 @@ public class AddRoom : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         yield return new WaitUntil(() => enemies.Count == 0);
-        OpenDoors();
+        if (!bossSpawner.activeInHierarchy)
+        {
+            OpenDoors();
+        }
     }
 
     public void OpenDoors()

@@ -466,6 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86948fdd8ab97e4793d7c50b658a0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 18
+  health: 12
   damage: 1
   effect: {fileID: 8485619460436703472, guid: f36d41b6c5da87547b7e56b790fbbb72, type: 3}

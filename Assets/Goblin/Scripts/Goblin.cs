@@ -21,6 +21,7 @@ public class Goblin : MonoBehaviour
 
     void Update()
     {
+
         float distToPlayer = Vector2.Distance(transform.position, player.position);
         if ((distToPlayer < agroDistance) && (distToPlayer > 0.9))
         {
@@ -39,7 +40,7 @@ public class Goblin : MonoBehaviour
         {
             animator.SetBool("Run", false);
         }
-        if(distToPlayer < 0.9 && timeBtwAttack <= 0f)
+        if (distToPlayer < 0.9 && timeBtwAttack <= 0f)
         {
             animator.SetTrigger("Attack");
             switch (AttackDir())
@@ -61,8 +62,6 @@ public class Goblin : MonoBehaviour
         }
         else
             timeBtwAttack -= Time.deltaTime;
-
-
     }
 
     string AttackDir()

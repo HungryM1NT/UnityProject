@@ -4,6 +4,7 @@ using System.IO;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;            // Переменная для работы с объектом
     private Vector2 direction;
     public Animator animator;
-    //private bool looksRight = true;
+
+    public GameObject pause;
 
     void Start()
     {
@@ -20,17 +22,28 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        direction.x = Input.GetAxisRaw("Horizontal");     // Переменная, отвечающая за горизонтальное передвижение
-        direction.y = Input.GetAxisRaw("Vertical");       // Переменная, отвечающая за вертикальное передвижение
+        if (!pause.activeInHierarchy)
+        {
+            direction.x = Input.GetAxisRaw("Horizontal");     // Переменная, отвечающая за горизонтальное передвижение
+            direction.y = Input.GetAxisRaw("Vertical");       // Переменная, отвечающая за вертикальное передвижение
 
-        if (direction.x != 0)
-            animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Speed", direction.sqrMagnitude);
+            if (direction.x != 0)
+                animator.SetFloat("Horizontal", direction.x);
+            animator.SetFloat("Speed", direction.sqrMagnitude);
+        }
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + direction * Speed * Time.fixedDeltaTime);   // Перемещение персонажа от x и y
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Stairs"))
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class RoomSpawner : MonoBehaviour
     {
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         Destroy(gameObject, waitTime);
-        Invoke("Spawn", 0.2f);
+        Invoke("Spawn", 0.1f);
     }
 
     public void Spawn()
@@ -35,19 +35,19 @@ public class RoomSpawner : MonoBehaviour
         {
             if (direction == Direction.Top)
             {
-                Invoke("SpawnTop", 0.2f);
+                Invoke("SpawnTop", 0f);
             }
             else if (direction == Direction.Bottom)
             {
-                Invoke("SpawnBottom", 0.6f);
+                Invoke("SpawnBottom", 0.2f);
             }
             else if (direction == Direction.Left)
             {
-                Invoke("SpawnLeft", 1f);
+                Invoke("SpawnLeft", 0.3f);
             }
             else if (direction == Direction.Right)
             {
-                Invoke("SpawnRight", 1.4f);
+                Invoke("SpawnRight", 0.5f);
             }
             else if (direction == Direction.All)
             {

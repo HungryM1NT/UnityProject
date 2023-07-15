@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class RoomVariants : MonoBehaviour
@@ -21,7 +23,7 @@ public class RoomVariants : MonoBehaviour
 
     IEnumerator RandomSpawner()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(5f);
         AddRoom lastRoom = rooms[rooms.Count - 1].GetComponent<AddRoom>();
         int rand = Random.Range(0, rooms.Count - 1);
         Vector3 pos = rooms[rand].transform.position;
@@ -29,7 +31,17 @@ public class RoomVariants : MonoBehaviour
         pos[1] += 0.5f;
         Instantiate(key, pos, Quaternion.identity);
 
-        lastRoom.keyDoor.SetActive(true);
+        foreach (GameObject keydoor in lastRoom.keyDoor)
+        {
+            keydoor.SetActive(true);
+        }
         lastRoom.OpenDoors();
+        foreach (GameObject unit in lastRoom.roomUnits)
+        {
+
+            unit.SetActive(false);
+        }
+        lastRoom.stairs.SetActive(true);
+        lastRoom.bossSpawner.SetActive(true);
     }
 }
