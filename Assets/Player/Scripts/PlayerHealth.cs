@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.Burst.CompilerServices;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject effect;
     private float invincibilityTime;
     public float startInvincibilityTime;
+
+    public GameObject death;
+    public GameObject hit;
 
 
     void FixedUpdate()
@@ -87,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
             invincibilityTime -= Time.deltaTime;
         if(health <= 0)
         {
+            Instantiate(death, transform.position, Quaternion.identity);
             SceneManager.LoadScene(2);
         }
     }
@@ -96,6 +101,7 @@ public class PlayerHealth : MonoBehaviour
         if (invincibilityTime <= 0f)
         {
             health -= damage;
+            Instantiate(hit, transform.position, Quaternion.identity);
             Instantiate(effect, transform.position, Quaternion.identity);
             invincibilityTime = startInvincibilityTime;
         }

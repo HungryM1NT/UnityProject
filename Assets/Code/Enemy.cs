@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject effect;
     private AddRoom room;
+    public GameObject goblinDeath;
 
     void Start()
     {
@@ -24,6 +26,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             room.enemies.Remove(gameObject);
+            if (gameObject.name == "Goblin(Clone)")
+            {
+                Instantiate(goblinDeath, transform.position, Quaternion.identity);
+            }
         }
         rb.Sleep();
     }

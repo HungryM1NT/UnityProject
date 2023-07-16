@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   animator: {fileID: 3145916502869440682}
+  pause: {fileID: 0}
 --- !u!114 &6070363989368741718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +288,9 @@ MonoBehaviour:
   attackRange: 0.5
   damage: 3
   anim: {fileID: 3145916502869440682}
+  pause: {fileID: 0}
+  swipe: {fileID: 3183425507265834691, guid: 4a5d4b4b4fae793468219eac16c4297f, type: 3}
+  hit: {fileID: 7475362359699206755, guid: 96c227066243a564b8c52c332496db70, type: 3}
 --- !u!114 &1374066503983078459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +320,8 @@ MonoBehaviour:
   hp44: {fileID: 21300000, guid: 3acf84f2f18f82849bb1781e6c39754c, type: 3}
   effect: {fileID: 8485619460436703472, guid: f36d41b6c5da87547b7e56b790fbbb72, type: 3}
   startInvincibilityTime: 1
+  death: {fileID: 1741622462872018748, guid: 193bd40ba8980f1439a90fedf5949cc3, type: 3}
+  hit: {fileID: 4729978232808958549, guid: 7d8a56cf582eb084298280cadb53dd68, type: 3}
 --- !u!114 &4919756405143731366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyIcon: {fileID: 3601288411277213975, guid: 0470e2c3fbb6abb42963be15c1279eb0, type: 3}
   wallEffect: {fileID: 8535910896420156078, guid: db54379165c4de34dafd8dc42b2590cf, type: 3}
+  keyPickup: {fileID: 6087457355503429336, guid: b21ee15dbe59cab4a9294936f3deb7e4, type: 3}
+  keyDoorOpen: {fileID: 919751703137876740, guid: aab1e137903fcda42b2efb6703b32e07, type: 3}
 --- !u!1 &6353988914635069138
 GameObject:
   m_ObjectHideFlags: 0

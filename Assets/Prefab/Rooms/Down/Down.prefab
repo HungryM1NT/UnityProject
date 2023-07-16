@@ -254,6 +254,7 @@ MonoBehaviour:
   - {fileID: 4188130824032297285}
   stairs: {fileID: 4274248883022403727}
   bossSpawner: {fileID: 729178941995981737}
+  doorOpen: {fileID: 5742965888780867152, guid: 8bf278940b8d74e438cc50619e4c8550, type: 3}
 --- !u!1 &1243508143404502277
 GameObject:
   m_ObjectHideFlags: 0

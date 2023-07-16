@@ -3327,6 +3327,7 @@ MonoBehaviour:
   - {fileID: 8585573543631229038}
   stairs: {fileID: 6328938702356174905}
   bossSpawner: {fileID: 6559148181059728726}
+  doorOpen: {fileID: 5742965888780867152, guid: 8bf278940b8d74e438cc50619e4c8550, type: 3}
 --- !u!1001 &831805300240740352
 PrefabInstance:
   m_ObjectHideFlags: 0

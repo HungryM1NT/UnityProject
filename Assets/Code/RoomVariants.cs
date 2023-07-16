@@ -35,7 +35,6 @@ public class RoomVariants : MonoBehaviour
         {
             keydoor.SetActive(true);
         }
-        lastRoom.OpenDoors();
         foreach (GameObject unit in lastRoom.roomUnits)
         {
 
@@ -43,5 +42,6 @@ public class RoomVariants : MonoBehaviour
         }
         lastRoom.stairs.SetActive(true);
         lastRoom.bossSpawner.SetActive(true);
+        lastRoom.OpenDoors();
     }
 }

@@ -3465,6 +3465,7 @@ MonoBehaviour:
   - {fileID: 5477273271073118758}
   stairs: {fileID: 1539975039180398973}
   bossSpawner: {fileID: 132729689888538695}
+  doorOpen: {fileID: 5742965888780867152, guid: 8bf278940b8d74e438cc50619e4c8550, type: 3}
 --- !u!61 &2828635160561243943
 BoxCollider2D:
   m_ObjectHideFlags: 0

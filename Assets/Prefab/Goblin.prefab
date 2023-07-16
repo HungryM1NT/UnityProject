@@ -469,3 +469,4 @@ MonoBehaviour:
   health: 12
   damage: 1
   effect: {fileID: 8485619460436703472, guid: f36d41b6c5da87547b7e56b790fbbb72, type: 3}
+  goblinDeath: {fileID: 2513784210654990712, guid: a84286835c9d63f4598312924fc40311, type: 3}

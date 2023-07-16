@@ -6,6 +6,8 @@ public class PlayerKey : MonoBehaviour
 {
     public GameObject keyIcon;
     public GameObject wallEffect;
+    public GameObject keyPickup;
+    public GameObject keyDoorOpen;
 
     private Rigidbody2D rb;
 
@@ -19,6 +21,7 @@ public class PlayerKey : MonoBehaviour
         {
             keyIcon.SetActive(true);
             Destroy(other.gameObject);
+            Instantiate(keyPickup, transform.position, Quaternion.identity);
         }
     }
 
@@ -29,6 +32,7 @@ public class PlayerKey : MonoBehaviour
             Instantiate(wallEffect, other.transform.position, Quaternion.identity);
             keyIcon.SetActive(false);
             other.gameObject.SetActive(false);
+            Instantiate(keyDoorOpen, transform.position, Quaternion.identity);
         }
     }
 }

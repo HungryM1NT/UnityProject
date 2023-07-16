@@ -18,6 +18,11 @@ public class PlayerAttack : MonoBehaviour
     public Animator anim;
 
     public GameObject pause;
+    public GameObject swipe;
+    public GameObject hit;
+
+    int hitCount = 0;
+    int count = 0;
 
     void Update()
     {
@@ -59,8 +64,23 @@ public class PlayerAttack : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<Enemy>().TakeDamage(damage);
+            if(hitCount == 0)
+            {
+                Instantiate(hit, transform.position, Quaternion.identity);
+            }
+            hitCount++;
         }
         timeBtwAttack = startTimeBtwAttack;
+        if(count == 0)
+        {
+            Instantiate(swipe, transform.position, Quaternion.identity);
+        }
+        count++;
+        if(count == 3)
+        {
+            count = 0;
+            hitCount = 0;
+        }
     }
 
     private void OnDrawGizmosSelected()

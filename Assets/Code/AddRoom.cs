@@ -21,6 +21,7 @@ public class AddRoom : MonoBehaviour
     public GameObject[] roomUnits;
     public GameObject stairs;
     public GameObject bossSpawner;
+    public GameObject doorOpen;
 
     private void Awake()
     {
@@ -72,5 +73,9 @@ public class AddRoom : MonoBehaviour
             }
         }
         doorsOpened = true;
+        if (!bossSpawner.activeInHierarchy)
+        {
+            Instantiate(doorOpen, transform.position, Quaternion.identity);
+        }
     }
 }
